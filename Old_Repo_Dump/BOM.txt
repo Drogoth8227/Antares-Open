@@ -1,0 +1,47 @@
+Format:
+QTY // CompNAME // CompDESCRIPTION (Default/0402) [LOC] // Part #  // COST ($) // B(asic) or E(xtended)
+
+Sillycon:
+1 // AP2112K-3.3 // LDO // C51118 // 0.0710 //E
+1 // BQ24073RGTR // Battery man // C15220 // 0.9921 //E
+1 // ICM-42688-P // ICM // C1850418 // 2.9918 //E
+1 // STM32F411CEU // MPU // C60420 // 4.5589 //E
+1 // DWM1000 // Transceiver // C95238 // 15.4946//E
+
+Contacts:
+1 // 10118194-0001LF // USB // C132563 // 0.2210 //E
+1 // TS-1187A-B-A-B // Button // C318884 // 0.0152 //B
+/* I HAVE NO IDEA WHAT THE FUCK TO DO ABOUT BATTERY CONTACTS HELP DEAR GOD HELP AAH PAIN */
+
+Clocks:
+1 // X1E0000210621 // CLK 25 // C255920 // 0.230 //E
+1 // SC-32S32.768kHz20PPM6pF // CLK 32 // C2692145 // 0.2274 //E
+
+Caps:
+6 // CL05B104KO5NNNC //100nF // C1525 // 0.0011 //B
+2 // 0402CG120J500NT //12pF // C1547 // 0.0010 //B
+2 // CL05C4R3CB5NNNC //4.3pF // C159803 // 0.0059 //E
+0 // 0402CG2R2C500NT //2.2pF // C1559 // 0.0012 //B //this part doesnt exist on the kicad bom // How odd, Likely a residue from the buck converter
+3 // CL05A105KA5NQNC //1uF // C52923 // 0.0039 //B
+2 // CL05A225MQ5NSNC //2.2uF // C12530 // 0.0026 //B
+1 // CL05B103KB5NNNC //10nF // C15195 // 0.0012 //B
+1 // CL05A475MP5NRNC //4.7uF // C23733 // 0.0060 //B
+1 // CL31A107MQHNNNE //100uF (1206) // C15008 //0.062//B
+
+An Inductor:
+1 // CMI321609X100KT //10uH (1206) // C1051 // 0.0155//B
+
+Resistors:
+7 // 0402WGF100KTCE // 10k // C25086 // 0.0007 //B ##this part is a 1 ohm not 10k
+8 // 0402WGF1001TCE // 1k // C11702 // 0.0005 //B
+1 // 0603WAF4302T5E // 43k (0603) // C23172 // 0.0010 //B
+2 // 0603WAF1101T5E // 1.1k (0603) // C22764 // 0.0010 //B
+
+LEDs:
+3 // 19-217/BHC-ZL1M2RY/3T // Blue [GP D1,2,3] (0603) // C72041 // 0.0179 //B
+2 // 19-217/GHC-YR1S2/3T // Green [Bat D4,5] (0603) // C72043 // 0.0264 //B
+3 // 19-213/Y2C-CQ2R2L/3T(CY) // Yellow [DWM D6,7,8] (0603) // C72038 // 0.0226 //B
+## 8 total leds, unsure how many of each colour
+
+
+D1_2, D1, D2_2, D2, D3_2, D3, D4_2, D4, D5_2, D5, D6_2, D6, D7_2, D7, D8_2, D8

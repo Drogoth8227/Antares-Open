@@ -1,0 +1,1 @@
+{"rustc":3249269541886640494,"features":"[\"restore-state-bool\"]","target":2052253045179128102,"profile":12637318739757120569,"path":15343044453849024899,"deps":[],"local":[{"CheckDepInfo":{"dep_info":"debug\\.fingerprint\\critical-section-c17790d542803e6a\\dep-lib-critical-section"}}],"rustflags":[],"metadata":6350857663597264176,"config":2202906307356721367,"compile_kind":0}

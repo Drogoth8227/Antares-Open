@@ -1,0 +1,73 @@
+ANTENNA DELAY CALIBRATION:
+antenna delays need to be calibrated on every module to enable accurate twr (and its one time so ehh).
+
+different prf channels mean multiple signals can be done at once (possibly for sync pulse to use different prf channel)
+however different prf still use the same air usage budget.
+channel 5/16mhz prf: -108dBm/MHz at reciever
+channel 5/64mhz prf: -104dBm/MHz at reciever
+channel 5/16mhz prf: 7.94m
+channel 5/64mhz prf: 5.01m
+use two way ranging scheme, perform 1000 ranges, adjust antenna delay until calculated value = real value +- error range
+store antenna delay value in otp of module. (if otp is not availible, store in host config file)
+
+antenna delay can be tweaked on the fly due to temperature changes of the module, typical change is 2.15mm/degree C.
+
+ANCHOR CLOCK SYNC:
+Tags/Anchors need sync'd clocks to enable accurate tdoa/tof
+
+clocks will not all be running at same speed, so need to sync multiple times and work out difference to adjust for this.
+main initialisor anchor will be transmitting sync pulse every 0.02s time, tags turn on receive every 0.02s time with +-0.00005s(?) time to allow for drift
+tags need to send clock offset back to host, (every pulse or only on syncs?)
+anchors calc transmit time of tag pulse before send to host
+anchors calc own offset from main anchor before sent to host
+host only sees correct times (removes computation on host)
+tag to calc its offset and send or just changes its own timestamp?
+
+first we use assymetric dual sided two-way ranging between tags/anchors
+find range from primary anchor to each other tag/anchor
+with known distances we can sync clocks wirelessly by comparing time stamps with theoretical values and apply offsets on host
+thus we have sync'd clocks to enable tdoa/tof
+
+
+ANCHOR POSISTIONING:
+find posistions of anchors for trilateration base code
+
+assymetric dual sided two way ranging between the anchors to give distances
+need 4 anchor distances to get point cloud which can then be used to work out posistions of anchors
+
+
+MULTIPLE TAG TIMINGS:
+tags need to transmit sequentially to prevent overlap and interference
+
+on tag startup, wait for regular sync pulse, then continue
+Tag clocks are synced to primary anchor's clock, hence we can just apply delay corresponding to tag number
+(relies on global clocks being synced)
+
+
+TAG DATA SENT TO ANCHORS:
+tags need to send data in uwb ranging pulse
+
+tags will send their id number, pulse send timetamp, accel/gyro data in the pulse, clock offset
+
+
+ANCHOR DATA SENT TO HOST:
+anchors will transmit all data to host via usb
+
+anchors will send anchor id, tag id, pulse send timestamp, pulse received timestamp, tag accel/gyro data
+
+
+HOST COMPUTE:
+host client will need to receive data from anchors and convert it to tag posistions
+
+load anchor posistions into memory, set anchor 1 as zero point.
+apply nessecary antenna calibrations to timestamps coming from respective anchors.
+compare time stamps between a pair of anchors per tag pulse to work out distance from each,
+repeat for all anchors for given tag pulse, use multilateration to work out posistion in 3d
+read accel values from pulse, use kalman filter to fuse trilateration data and double integrated accel data to get final posistion.
+read gyro data, output pitch/roll, for yaw, set x axis as 0 degrees,
+accel data will be aligned with gyro data, thus pure x axis accel will be 0 degree on yaw, if not add offset in host.
+output final data to openvr driver
+
+c shit
+& = what is the address
+* = what is in the address

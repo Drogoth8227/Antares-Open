@@ -1,0 +1,11 @@
+during standard operation:
+tag registers to write to
+
+
+
+tag doesnt read any registers
+anchor register doesnt write
+anchor register only read
+
+
+For clock sync:

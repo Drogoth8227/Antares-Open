@@ -1,0 +1,3 @@
+cargo:rustc-link-search=C:\Users\Drogoth\Documents\GitHub\Raptor_Track\Antares\Antarust\target\debug\build\cortex-m-rt-fd21ea17cd4f6e05\out
+cargo:rerun-if-changed=build.rs
+cargo:rerun-if-changed=link.x.in

@@ -1,0 +1,34 @@
+plan:
+
+components so far:
+ranging module - DWM1000
+MCU - STM32F411
+IMU - LSM6DSRTR
+Battery charge IC - TP4056
+Batteries - undecided
+
+update frequencies:
+IMU data - 1000hz
+ranging data refresh - 100hz
+ranging module - 1000hz
+
+kalman filter on ranging data, 10 samples per refresh (refresh is update IMU offset at 100hz)
+kalman also factor accel data from IMU for sanity check
+
+where processing?
+all prototype boards are the same and can all be either tag/anchor
+tag would mean only data out would be final location
+anchor would mean lower power consumption on tag
+
+yaw?
+could use magnetometer but sensitive to magnetic envirment
+multiple dw1000 modules and use trigonometry to get angle (increases cost per tracker)
+
+all data transfer is to an anchor which is plugged into pc with usb cable
+
+trilateration to get x,y,z posisiton from ranging
+
+pitch/roll/yaw from gyro (with 3 dw1000 modules too?)
+
+accuracy (quoted from dw1000 datasheet): +-5cm
+std dev: 2cm ish
