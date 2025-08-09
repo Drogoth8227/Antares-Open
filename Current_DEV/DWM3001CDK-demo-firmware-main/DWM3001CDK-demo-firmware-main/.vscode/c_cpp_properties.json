@@ -1,0 +1,35 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "C:/Users/Drogoth/Documents/GitHub/Antares-Open/Current_DEV/DWM3001CDK-demo-firmware-main/DWM3001CDK-demo-firmware-main/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "C:/Users/Drogoth/Documents/GitHub/Antares-Open/Current_DEV/DWM3001CDK-demo-firmware-main/DWM3001CDK-demo-firmware-main/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "F_CPU=64000000L",
+                "PLATFORMIO=60118",
+                ""
+            ],
+            "compilerPath": "C:/Users/Drogoth/.platformio/packages/toolchain-gccarmnoneeabi@1.70201.0/bin/arm-none-eabi-gcc.exe",
+            "compilerArgs": [
+                "-mthumb",
+                "-mcpu=cortex-m4",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
