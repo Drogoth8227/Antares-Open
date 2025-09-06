@@ -4,15 +4,10 @@ Antares is a UWB based RTLS primarily focused on VR applications
 (think lighthouse tracking but cheaper and using rf instead of light)
 
 
-WARNING: very WIP, this is going open because i don't have the skill or time to build on my own,
-
-I will help where I can with architecture and design but I cant do it all.
+We have comms to the CDK's, so we can output over the NRF52833's UART USB and we can actually get into the uwb part now! (turns out zephyr is gud)
 
 
-WARNING 2: currently no uploadable code, the location engine works in python, thats about as close as we have gotten so far
-
-
-WARNING 3: UWB is still coming into the spotlight in mainstream devices (phones/headphones etc) so conflicts may occur and should be fixed ASAP
+WARNING: UWB is still coming into the spotlight in mainstream devices (phones/headphones etc) so conflicts may occur and should be fixed ASAP
 
 
 pros:
